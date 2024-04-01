@@ -103,8 +103,6 @@ void setup() {
 size_t retrieveData(char* data, const size_t data_capacity) {
     // Get air metrics
     JsonDocument air_data;
-    sensors_event_t humidity, temperature;
-    aht.getEvent(&humidity, &temperature);
 
     air_data["Temperature"]  = 1;
     air_data["Humidity"]     = 1;
@@ -113,7 +111,7 @@ size_t retrieveData(char* data, const size_t data_capacity) {
     // Get soil metrics
     JsonDocument soil_data;
     const float moisture_level = 1;
-    soil_data["Moisture"]      = moisture_level;
+    soil_data["Moisture"]      = 1;
 
     // Get device metrics
     JsonDocument device_data;
